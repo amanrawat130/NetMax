@@ -1,0 +1,163 @@
+*{
+   text-decoration: none;
+   background-color: white;
+   color: black;
+}
+
+
+
+/* <--------------- nav-bar ---------->  */
+
+.nav-bar {
+
+    display: flex;
+   
+    margin: 10px auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    width: 95%;
+  
+}
+
+
+
+/* <------- Nav Bar Components --->   */
+
+.logo-img {
+  background-color: transparent;
+}
+
+.logo1-img {
+  background: transparent;
+  color: red;
+  height: 50px;
+}
+
+.logo2-img {
+  background: transparent;
+  color: red;
+  height: 40px;
+}
+
+
+/* <-- Right Side Bar --> */
+
+.content {
+    display: flex;
+    /* height: 35px; */
+    /* background-color: transparent; */
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+
+}
+
+
+.sign-in {
+    background: #ff0000b7;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 16px;  
+  }
+
+.sign-in:hover{
+    background-color: rgba(255, 0, 0, 0.956);
+    color:rgb(255, 248, 248)
+}
+
+
+  .contact-us {
+    background: rgba(255, 255, 255, 0.074);
+    border: 1px solid rgb(218, 217, 217);
+    border-radius: 3px ;
+    color: rgb(9, 9, 9);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 401;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 16px;
+    
+  }
+
+  .contact-us:hover{
+    color: rgb(255, 248, 248);
+    background-color: red;
+  }
+
+  .actionButtons a:hover{
+    color: red;
+  }
+  
+  .actionButtons button:hover{
+    color: red;
+  }
+
+
+@media print {
+    .noPrint {
+        display:none;
+      }
+
+      p, h1,h2, li,b {
+       color:#0a0a0a;
+      }
+}
+
+button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.redhighlighted{
+    color:red;
+}
+
+nav{
+    width: 95%;
+    max-width: 1200px;
+    margin: 10px auto;
+}
+
+.container{
+    width: 95%;
+    max-width: 1100px;
+    margin: 50px auto;
+
+}
+
+.actionButtons{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0px;
+    flex-wrap: wrap;
+}
+
+h2{
+    margin-top: 30px;
+}
+
+p{
+    margin-top: 15px;
+}
+
+ul li{
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+
+
+
+

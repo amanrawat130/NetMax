@@ -1,0 +1,252 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Poppins';
+    background-color: black;
+}
+
+
+/* <-------- Landing Page --------------> */
+
+.landing-page::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(31, 27, 27, 0.54);
+    z-index: -1;
+}
+
+
+.landing-page {
+    display: grid;
+    background-image: url("./img/landing-img/nf.jpg");
+    background-position: center;
+    filter: brightness(120%);
+    height: 100vh;
+    background-size: cover;
+    filter: contrast(1.2);
+}
+
+/* <------------------- Nav Bar ------------------>  */
+
+.nav-bar {
+    display: flex;
+    flex-wrap: wrap;
+    height: 90px;
+    align-items: center;
+    justify-content: space-between;
+    filter: brightness(1.3);
+    filter: contrast(1.2);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* <------- Nav Bar Components --->   */
+
+/* <-- Logo -->*/
+
+.nav-bar {
+
+    display: flex;
+    background-color: transparent;
+    margin: 10px auto;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    filter: brightness(1.3);
+    filter: contrast(1.2);
+    background-color: transparent;
+    max-width: 1292px;
+    width: 95%;
+
+}
+
+/* <------- Nav Bar Components --->   */
+
+
+.logo-img {
+    background-color: transparent;
+    align-content: center;
+    cursor: pointer;
+
+}
+
+.logo1-img {
+    background: transparent;
+    height: 50px;
+}
+
+.logo2-img {
+    background: transparent;
+    height: 40px;
+}
+
+
+/* <-- Right Side Bar --> */
+
+.content {
+    display: flex;
+    background-color: transparent;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.lang-after,
+.lang-before {
+    color: White;
+    background-color: transparent;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid rgb(111, 111, 111);
+}
+
+.lang-after {
+    display: none;
+}
+
+
+/* <-------- login form --------------> */
+
+.hybrid-login-form {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+.signup {
+    background-color: #000000ab;
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 15px;
+    flex-direction: column;
+    height: 75vh;
+    padding: 30px 55px 40px;
+}
+
+#staticEmail,
+#inputPassword {
+    width: 100%;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    background-color: #343434;
+    border: none;
+    padding: 15px 0px;
+}
+
+.btn {
+    background-color: rgb(147, 0, 0);
+    border-radius: 5px;
+}
+
+#huhu {
+    width: 100%;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    padding: 10px 0px;
+
+}
+
+.help a {
+    text-align: right;
+}
+
+#huhu:hover {
+    background-color: rgb(147, 0, 0);
+    transition: all .4s ease;
+}
+
+.need {
+    display: inline-block;
+    background-color: transparent;
+
+}
+
+.need p,
+a {
+    background-color: transparent;
+    line-height: 1.5rem;
+    color: gray;
+
+}
+
+.signup h2 {
+    background-color: transparent;
+    letter-spacing: 2px;
+    font-size: 40px;
+}
+
+
+.signup .col-sm-10 {
+    background-color: transparent;
+    padding: 10px 0px;
+}
+
+.checkkk {
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkkbox1 {
+    background: transparent;
+    display: flex;
+}
+
+.checkkbox {
+    background-color: transparent;
+    flex-grow: 1;
+}
+
+
+
+.signup .checkkk,
+label,
+input,
+button {
+    background: transparent;
+    color: gray;
+}
+
+/* <-------- Display Block ----------> */
+
+
+@media (max-width: 700px) {
+
+    .logo-img {
+        display: flex;
+        padding-left: 16px;
+    }
+
+    .logo2-img {
+        display: none;
+    }
+
+    .signup {
+        width: 100%;
+    }
+
+    /* .nav-bar>div .logo-img {
+        background-size: cover;
+        display: block;
+        height: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    } */
+
+}
