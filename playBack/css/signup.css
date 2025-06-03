@@ -27,7 +27,7 @@
 
 .landing-page {
     display: grid;
-    background-image: url("./img/landing-img/nf.jpg");
+    background-image: url("../img/landing-img/nf.jpg");
     background-position: center;
     filter: brightness(120%);
     height: 100vh;

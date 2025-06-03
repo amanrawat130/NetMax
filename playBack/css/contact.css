@@ -29,7 +29,7 @@
 
 .landing-page {
     display: grid;
-    background-image: url("./img/landing-img/nf.jpg");
+    background-image: url("../img/landing-img/nf.jpg");
     background-position: center;
     height: 100vh;
     background-attachment: fixed;
