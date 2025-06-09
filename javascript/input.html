@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Largest of Two</title>
+</head>
+<body>
+
+  firstValue: <input type="text" id="firstNum">
+  secondValue: <input type="text" id="secondNum">
+  <!-- <checkbox id="checkBox" checked> -->
+
+      <label>Select Operation:</label>
+  <select id="operation">
+    <option value="add">Addition (+)</option>
+    <option value="subtract">Subtraction (-)</option>
+    <option value="multiply">Multiplication (×)</option>
+    <option value="divide">Division (÷)</option>
+  </select><br><br>
+ 
+    
+  <p id="result">Result will show here</p>
+
+  <button id="myBtn" onclick="add()">Click Me</button>
+
+  <script>
+
+//  --------------- First method ---------------
+
+    // document.getElementById("myBtn").addEventListener("click", function () {
+    //   const first = parseFloat(document.getElementById("firstNum").value);
+    //   const second = parseFloat(document.getElementById("secondNum").value);
+
+    //   const value = first - second;
+    //   document.getElementById("result").innerHTML = "Subtraction is: " + value;
+    // });
+
+// ---------------------------------------------
+
+// --------------- Second method ---------------
+
+ 
+    function add() {
+      const first = parseFloat(document.getElementById("firstNum").value);
+      const second = parseFloat(document.getElementById("secondNum").value);
+      const c = first + second;
+      document.getElementById("result").innerHTML = "Addition is: " + c;
+    }
+
+  </script>
+
+</body>
+</html>
