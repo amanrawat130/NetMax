@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Input Display</title>
+</head>
+<body>
+
+  <h2>User Info</h2>
+
+  Name: <input type="text" id="name"><br><br>
+  City: <input type="text" id="city"><br><br>
+  Salary: <input type="number" id="salary"><br><br>
+  Contact: <input type="text" id="contact"><br><br>
+
+  <button onclick="displayInfo()">Submit</button>
+
+  <h3>Output:</h3>
+  <p id="result"></p>
+
+  <script>
+
+// <-------------- without constructor function ---------------->  
+
+
+    function displayInfo() {
+      let name = document.getElementById("name").value;
+      let city = document.getElementById("city").value;
+      let salary = document.getElementById("salary").value;
+      let contact = document.getElementById("contact").value;
+
+      let output = `
+        Name: ${name}<br>
+        City: ${city}<br>
+        Salary: ₹${salary}<br>
+        Contact: ${contact}
+      `;
+
+      document.getElementById("result").innerHTML = output;
+    }
+
+// <---------------- with constructor function ---------------->
+
+// function User(name, city, salary, contact) {
+//   this.name = name;
+//   this.city = city;
+//   this.salary = salary;
+//   this.contact = contact;
+// }
+
+// function displayInfo() {
+//   const name = document.getElementById("name").value;
+//   const city = document.getElementById("city").value;
+//   const salary = document.getElementById("salary").value;
+//   const contact = document.getElementById("contact").value;
+
+//   // Creating object using constructor
+//   const user1 = new User(name, city, salary, contact);
+
+//   document.getElementById("result").innerHTML = `
+//     <strong>User Details:</strong><br>
+//     Name: ${user1.name} <br>
+//     City: ${user1.city} <br>
+//     Salary: ₹${user1.salary} <br>
+//     Contact: ${user1.contact}
+//   `;
+// }
+  </script>
+
+</body>
+</html>

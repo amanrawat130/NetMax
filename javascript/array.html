@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Enter the name: <input type="text" name="name" id="name" class="name"><br><br>
+    Push to Array : <input type="text" name="array" id="array" class="array"><br><br>
+  
+    <select id="operation">
+    <option value="name">Display Name(+)</option>
+    <option value="arr">Add To Array</option>
+
+  </select><br><br>
+
+    <button id="btn">Display</button>
+    <button id="popButtton">pop element</button>
+
+    <p id="display"></p>
+    
+    <script>
+
+        let arr = [];
+        
+        
+        document.getElementById("btn").addEventListener("click", function () {
+        let operation = document.getElementById("operation").value; 
+            
+        if (operation === "arr") {
+         const arrayInput = document.getElementById("array");
+        const arrayValue = arrayInput.value;
+        console.log(arrayValue)
+        // const arrayValue = document.getElementById("array").value;
+        if (arrayValue) {
+            // arr.push(arrayValue);
+            
+            arr[arr.length] = arrayValue;
+
+            // document.getElementById("display").innerHTML = `Array: ${arr.join(", ")}`;
+            document.getElementById("display").innerHTML = `Array: ${arr.join(", ")}`;
+
+            
+        } else {
+            document.getElementById("display").innerHTML = "Please enter a value to add to the array.";
+        }
+         arrayInput.value = "";
+    } else {
+        const name = document.getElementById("name").value;
+        document.getElementById("display").innerHTML = `Hello ${name}, welcome to the world of JavaScript!`;
+        document.getElementById("name").value = ""; 
+    
+    }
+});
+
+    document.getElementById("popButtton").addEventListener("click", function(){
+            arr.pop()
+            document.getElementById("display").innerHTML = `Array: ${arr}`;
+
+    })
+
+
+
+
+    </script>
+</body>
+</html>

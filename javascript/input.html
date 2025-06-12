@@ -2,51 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Largest of Two</title>
+  <title>Simple JS Calculator</title>
 </head>
 <body>
 
-  firstValue: <input type="text" id="firstNum">
-  secondValue: <input type="text" id="secondNum">
-  <!-- <checkbox id="checkBox" checked> -->
+  <h2>Simple Calculator</h2>
 
-      <label>Select Operation:</label>
+  <label>First Number:</label>
+  <input type="text" id="firstNum"><br><br>
+
+  <label>Second Number:</label>
+  <input type="text" id="secondNum"><br><br>
+
+  <label>Select Operation:</label>
   <select id="operation">
     <option value="add">Addition (+)</option>
     <option value="subtract">Subtraction (-)</option>
     <option value="multiply">Multiplication (×)</option>
     <option value="divide">Division (÷)</option>
   </select><br><br>
- 
-    
+
+  <button onclick="calculate()">Calculate</button>
+
   <p id="result">Result will show here</p>
 
-  <button id="myBtn" onclick="add()">Click Me</button>
-
   <script>
+    function calculate() {
+      const num1 = parseFloat(document.getElementById("firstNum").value);
+      const num2 = parseFloat(document.getElementById("secondNum").value);
+      const operation = document.getElementById("operation").value;
 
-//  --------------- First method ---------------
+      let result;
 
-    // document.getElementById("myBtn").addEventListener("click", function () {
-    //   const first = parseFloat(document.getElementById("firstNum").value);
-    //   const second = parseFloat(document.getElementById("secondNum").value);
+      if (isNaN(num1) || isNaN(num2)) {
+        result = "Please enter valid numbers.";
+      } else {
+// <--------- Switch statements ------------------>    
+        /* switch (operation) {
+          case "add":
+            result = num1 + num2;
+            break;
+          case "subtract":
+            result = num1 - num2;
+            break;
+          case "multiply":
+            result = num1 * num2;
+            break;
+          case "divide":
+            if (num2 === 0) {
+              result = "Cannot divide by zero.";
+            } else {
+              result = num1 / num2;
+            }
+            break;
+          default:
+            result = "Please select an operation.";
+         } 
+            */
 
-    //   const value = first - second;
-    //   document.getElementById("result").innerHTML = "Subtraction is: " + value;
-    // });
+// <--------- If-else statements ------------------>
 
-// ---------------------------------------------
+        if( operation === "add") {
+          result = num1 + num2;
+        } else if (operation === "subtract") {
+          result = num1 - num2;
+        } else if (operation === "multiply") {
+          result = num1 * num2;
+        } else if (operation === "divide") {
+          if (num2 === 0) {
+            result = "Cannot divide by zero.";
+          } else {
+            result = num1 / num2;
+          }
+        } else {
+          result = "Please select an operation.";
+        }
+      }
 
-// --------------- Second method ---------------
-
- 
-    function add() {
-      const first = parseFloat(document.getElementById("firstNum").value);
-      const second = parseFloat(document.getElementById("secondNum").value);
-      const c = first + second;
-      document.getElementById("result").innerHTML = "Addition is: " + c;
+      document.getElementById("result").innerHTML = "Result: " + result;
     }
-
   </script>
 
 </body>
