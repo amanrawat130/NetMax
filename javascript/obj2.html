@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+     <h2>User Info</h2>
+
+  Name: <input type="text" id="name"><br><br>
+  City: <input type="text" id="city"><br><br>
+  Salary: <input type="number" id="salary"><br><br>
+  Contact: <input type="text" id="contact"><br><br>
+
+  <button onclick="displayInfo()">Submit</button>
+
+  <h3>Output:</h3>
+  <p id="result"></p>
+
+  <script>
+
+// <-------------- without constructor function ---------------->  
+
+
+    let arr= [];
+
+
+    function displayInfo() {
+      let name = document.getElementById("name").value;
+      let city = document.getElementById("city").value;
+      let salary = document.getElementById("salary").value;
+      let contact = document.getElementById("contact").value;
+
+      let output = `
+        Name: ${name}<br>
+        City: ${city}<br>
+        Salary: ₹${salary}<br>
+        Contact: ${contact}
+      `;
+
+      arr.push(output)
+      document.getElementById("result").innerHTML = output;
+      console.log("ARRRRRRRRRRR", arr)
+    }
+
+
+
+
+    </script>
+    
+</body>
+</html>

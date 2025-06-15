@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body><center>
+            Name: <input type="text" id="name"><br><br>
+            City: <input type="text" id="city"><br><br>
+            Salary: <input type="text" id="salary"><br><br>
+            Contact: <input type="text" id="contact" ><br><br>
+            <button onclick="show()"> Submit</button> 
+        </center>
+        <p id="result"></p>
+        <table border="2" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Salary</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody id="result2">
+            <!-- Data will be inserted here -->
+        </tbody>
+        </table>
+
+        <script>
+
+            function Display(name, city, salary, contact) {
+                this.name = name;
+                this.city = city;
+                this.salary = salary;
+                this.contact = contact;
+            }
+
+
+            var employees = [];
+            var output = "";
+            function show() {
+                var name = document.getElementById("name").value;
+                var city = document.getElementById("city").value;
+                var salary = document.getElementById("salary").value;
+                var contact = document.getElementById("contact").value;
+
+                var employee = new Display(name, city, salary, contact);
+                
+                output += `<tr>
+                    <td>${employee.name}</td>
+                    <td>${employee.city}</td>
+                    <td>${employee.salary}</td>
+                    <td>${employee.contact}</td>
+                    </tr>`;
+                    
+                    document.getElementById("result2").innerHTML = output;
+                    employees.push(employee);
+                document.getElementById("name").value = "";
+                document.getElementById("city").value = "";
+                document.getElementById("salary").value = "";
+                document.getElementById("contact").value = "";
+            }
+
+
+   
+
+
+
+    </script>
+   
+
+    </body>
+    </html>

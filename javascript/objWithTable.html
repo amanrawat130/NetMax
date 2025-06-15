@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Info Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>User Info</h2>
+
+  Name: <input type="text" id="name"><br><br>
+  City: <input type="text" id="city"><br><br>
+  Salary: <input type="number" id="salary"><br><br>
+  Contact: <input type="text" id="contact"><br><br>
+
+  <button onclick="displayInfo()">Submit</button>
+
+  <h3>Submitted Info:</h3>
+
+  <table id="infoTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th>Salary</th>
+        <th>Contact</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      
+    </tbody>
+  </table>
+
+  <script>
+    // let arr = [];
+
+    function displayInfo() {
+      let name = document.getElementById("name").value;
+      let city = document.getElementById("city").value;
+      let salary = document.getElementById("salary").value;
+      let contact = document.getElementById("contact").value;
+
+      let userData = {
+        name,
+        city,
+        salary,
+        contact
+      };
+
+    //   arr.push(userData);
+    //   console.log("Stored Data:", arr);
+
+  
+      let newRow = document.createElement("tr");
+      newRow.innerHTML = `
+        <td>${userData.name}</td>
+        <td>${userData.city}</td>
+        <td>₹${userData.salary}</td>
+        <td>${userData.contact}</td>
+      `;
+
+      document.getElementById("tableBody").appendChild(newRow);
+
+  
+      document.getElementById("name").value = "";
+      document.getElementById("city").value = "";
+      document.getElementById("salary").value = "";
+      document.getElementById("contact").value = "";
+    }
+  </script>
+
+</body>
+</html>
