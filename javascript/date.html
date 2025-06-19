@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="hours"></span><span>:</span>
+    <span id="minutes"></span><span>:</span>
+    <span id="seconds"></span>
+
+    <p id="fullYear"></p>
+</body>
+
+<script>
+
+
+    let date = new Date();
+    // documment.getElementsByClassName("demo").innerHTML =  "hello"
+    setInterval(function() {
+        date = new Date();
+        document.getElementById("hours").innerHTML = date.getHours();
+        document.getElementById("minutes").innerHTML = date.getMinutes();
+        document.getElementById("seconds").innerHTML = date.getSeconds();
+        document.getElementById("fullYear").innerHTML = date.getFullYear();
+    }, 1000);
+    
+</script>
+</html>

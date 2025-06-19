@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Day</title>
+</head>
+<body>
+    <input type="text" id="dayInput" placeholder="Enter day">
+    <button id="btn">Check Day</button>
+    <p id="output"></p>
+
+    <script>
+        let dayInput = document.getElementById("dayInput");
+        let output = document.getElementById("output");
+        let btn = document.getElementById("btn");
+
+        btn.addEventListener("click", function () {
+            let input = dayInput.value.trim().toLowerCase();
+            output.innerHTML = "";
+
+            if (isNaN(input)) {
+                switch (input) {
+                    case "monday":
+                        output.innerHTML = "Day number is 1";
+                        break;
+                    case "tuesday":
+                        output.innerHTML = "Day number is 2";
+                        break;
+                    case "wednesday":
+                        output.innerHTML = "Day number is 3";
+                        break;
+                    case "thursday":
+                        output.innerHTML = "Day number is 4";
+                        break;
+                    case "friday":
+                        output.innerHTML = "Day number is 5";
+                        break;
+                    case "saturday":
+                        output.innerHTML = "Day number is 6";
+                        break;
+                    case "sunday":
+                        output.innerHTML = "Day number is 7";
+                        break;
+                    default:
+                        output.innerHTML = "Invalid day name";
+                }
+            } else {
+                let dayNum = parseInt(input);
+                switch (dayNum) {
+                    case 1:
+                        output.innerHTML = "Day is Monday";
+                        break;
+                    case 2:
+                        output.innerHTML = "Day is Tuesday";
+                        break;
+                    case 3:
+                        output.innerHTML = "Day is Wednesday";
+                        break;
+                    case 4:
+                        output.innerHTML = "Day is Thursday";
+                        break;
+                    case 5:
+                        output.innerHTML = "Day is Friday";
+                        break;
+                    case 6:
+                        output.innerHTML = "Day is Saturday";
+                        break;
+                    case 7:
+                        output.innerHTML = "Day is Sunday";
+                        break;
+                    default:
+                        output.innerHTML = "Invalid day number (1 to 7)";
+                }
+            }
+            dayInput.value = "";
+
+        });
+    </script>
+</body>
+</html>

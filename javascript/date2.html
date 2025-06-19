@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Clock</title>
+</head>
+<body>
+
+  <h2>Live Clock</h2>
+  <p id="clock" style="font-size: 24px; font-weight: bold;"></p>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+
+      const day = now.getDate().toString().padStart(2, '0');
+      const month = (now.getMonth() + 1).toString().padStart(2, '0'); // Months start from 0
+      const year = now.getFullYear();
+
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+
+      const fullDate = `${day}-${month}-${year}`;
+      const time = `${hours}:${minutes}:${seconds}`;
+
+      document.getElementById("clock").innerHTML = `Date: ${fullDate}<br>Time: ${time}`;
+    }
+
+    // Run clock every 1 second
+    setInterval(updateClock, 1000);
+
+    // Initial call
+    updateClock();
+  </script>
+
+</body>
+</html>

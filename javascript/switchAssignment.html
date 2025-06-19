@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Switch Button Info</title>
+</head>
+<body>
+
+  <h2>Click a Button</h2>
+
+  <button class="btn" data-id="name">Name</button>
+  <button class="btn" data-id="location">Location</button>
+  <button class="btn" data-id="salary">Salaray</button>
+  <button class="btn" data-id="contact">Contact</button>
+
+  <p id="result"></p>
+
+  <script>
+    const buttons = document.querySelectorAll(".btn");
+    const result = document.getElementById("result");
+
+    buttons.forEach(button => {
+      button.addEventListener("click", (e) => {
+        console.log(this.value, "valuee ")
+        const btnId = e.target.getAttribute("data-id");
+        let info = "";
+
+        switch (btnId) {
+          case "name":
+            info = "My name is Aman Rawat.";
+            break;
+          case "location":
+            info = "Lived in Dehardun Uttarakhand.";
+            break;
+          case "salary":
+            info = "Salary is Not Disclosed.";
+            break;
+          case "contact":
+            info = "Contact is +918630065618.";
+            break;
+          default:
+            info = "Unknown button.";
+        }
+        result.innerText = info;
+      });
+    });
+  </script>
+
+</body>
+</html>

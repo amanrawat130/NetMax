@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multiplication Table of 2</title>
+</head>
+<body>
+
+  <h2>Multiplication Table of 2</h2>
+
+  Number: <input type="number" id="num"><br><br>
+  Range: <input type="number" id="range"><br><br>
+  <!-- <button onclick="generateTable()">Show Table</button> -->
+   <button id="generateBtn">Show Table</button>
+  <table>
+
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <script>
+    const generateBtn = document.getElementById("generateBtn");
+    const tableBody = document.getElementById("tableBody");
+
+     generateBtn.addEventListener("click", function() {
+      const num = Number(document.getElementById("num").value);
+      const range = Number(document.getElementById("range").value);
+
+
+      for (let i = 1; i <= range; i++) {
+        const row = document.createElement("tr");
+        const expression = `${num} × ${i} = ${num * i}`;
+        
+      // row.innerHTML = `
+      //   <td>${expression}</td>
+      //   <td>= ${result}</td>
+      // `;
+
+      row.innerHTML = `
+        <td>${expression}</td>
+      
+      `;
+      tableBody.appendChild(row);
+    }
+  });
+  </script>
+
+</body>
+</html>
