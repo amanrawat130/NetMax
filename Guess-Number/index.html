@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Number</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>Guess the Number</h1>
+      <p>Enter a number between 1 and 100</p>
+
+      <input type="number" id="guessInput" placeholder="Enter your guess" />
+      <button id="submitBtn">Submit</button>
+
+      <p id="message">Let's see how close you are!</p>
+      <p id="guessCount">Guesses: 0</p>
+    </div>
+  </body>
+
+  <script>
+    let randomNumber = Math.floor(Math.random() * 100) + 1;
+    console.log(randomNumber);
+    let message = document.getElementById("message");
+    let guess = document.getElementById("guessCount");
+    let guessCount = 0;
+    let isCompleted = false;
+
+    // console.log(message);
+
+    let submit = document.querySelector("#submitBtn");
+    let restart = document.querySelector("#restart");
+
+    console.log("again");
+
+    submit.addEventListener("click", () => {
+        console.log("inside listner", isCompleted);
+        
+        
+        
+
+        if(isCompleted){
+            console.log("completed", isCompleted)
+            document.querySelector("#guessInput").value = "";
+            submit.style.backgroundColor = ""
+            message.textContent = "Let's see how close you are!";
+            guess.textContent = "Guesses: 0";
+            guessCount = 0;
+            randomNumber = Math.floor(Math.random() * 100) + 1;
+            isCompleted = false;
+            console.log(randomNumber)
+            return;
+        }
+        
+        let userInput = Number(document.querySelector("#guessInput").value);
+      //   let userInput = +document.querySelector("#guessInput").value;  //Shothand : convert into number
+
+      if (!userInput || userInput < 1 || userInput > 100) {
+        message.textContent = "Please enter a number between 1 and 100"; // important : checking invalid inputs
+        return;
+      }
+
+      if (userInput === randomNumber) {
+        message.textContent = "🎉 Hooray! You guessed it!";
+        submit.textContent = "Play again 🥳";
+        isCompleted = true;
+        submit.style.backgroundColor = "Red"
+      } else {
+        if (userInput < randomNumber) message.textContent = "You guessed low";
+        else message.textContent = "You guessed high";
+      }
+      guessCount++;
+      guess.textContent = `Guesses: ${guessCount}`;
+      console.log("indiside listner count", guessCount);
+    });
+
+
+
+
+  </script>
+</html>
